@@ -4,6 +4,7 @@ from sqlalchemy.orm import relationship
 from .database import Base
 
 
+# 유저 모델
 class User(Base):
   __tablename__ = "users"
 
@@ -14,7 +15,7 @@ class User(Base):
   # platforms = relationship("Platform", back_populates="user")
 
 
-
+# 이력서 모델
 class Resume(Base):
   __tablename__ = "resumes"
 
@@ -27,6 +28,7 @@ class Resume(Base):
   languages = relationship("Language", back_populates="resume")
 
 
+# 채용플랫폼 계정정보 모델
 class Platform(Base):
   __tablename__ = "platforms"
 
@@ -40,6 +42,7 @@ class Platform(Base):
   # user = relationship("User", back_populates="platforms")
 
 
+# 학력사항 모델
 class Education(Base):
   __tablename__ = "educations"
 
@@ -63,6 +66,7 @@ class Education(Base):
   resume = relationship("Resume", back_populates="educations")
 
 
+# 경력사항 모델
 class Career(Base):
   __tablename__ = "careers"
 
@@ -82,6 +86,7 @@ class Career(Base):
   resume = relationship("Resume", back_populates="careers")
 
 
+# 자격증 모델
 class License(Base):
   __tablename__ = "licenses"
 
@@ -93,6 +98,7 @@ class License(Base):
   resume = relationship("Resume", back_populates="licenses")
 
 
+# 어학 모델
 class Language(Base):
   __tablename__ = "languages"
 
